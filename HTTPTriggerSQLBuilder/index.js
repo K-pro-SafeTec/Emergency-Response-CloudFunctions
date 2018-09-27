@@ -6,7 +6,7 @@ function querySQLDatabase(connection, callback) {
     var result = []
 
     // Create the request
-    request = new Request("SELECT ID, FIVEKMTIME  FROM RunnerPerformance WHERE FIVEKMTIME < 20;", function(error) {
+    request = new Request("SELECT ID, FIVEKMTIME  FROM RunnerPerformance WHERE FIVEKMTIME < 30;", function(error) {
         if (error) {context.log(error);}
         // pass the results array on through the callback
         callback(null, result);
@@ -31,6 +31,7 @@ function querySQLDatabase(connection, callback) {
 module.exports = function (context) {
 
     // Get connection details to connect to DB from env variable
+    context.log(process.env.SQLAZURECONNSTR_EmergencyResponseDB)
     var connection_details = JSON.parse(process.env.SQLAZURECONNSTR_EmergencyResponseDB)
 
     // Debug print

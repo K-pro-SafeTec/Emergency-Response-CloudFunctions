@@ -1,0 +1,25 @@
+{
+  "name": "Emergency-Response-CloudFunctions",
+  "version": "1.0.0",
+  "description": "Repo for Azure Functions working as a backend API",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^2.6.1",
+    "tedious": "^2.6.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K-pro-SafeTec/Emergency-Response-CloudFunctions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/K-pro-SafeTec/Emergency-Response-CloudFunctions/issues"
+  },
+  "homepage": "https://github.com/K-pro-SafeTec/Emergency-Response-CloudFunctions#readme"
+}

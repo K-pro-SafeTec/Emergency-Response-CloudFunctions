@@ -6,7 +6,7 @@ function querySQLDatabase(connection, callback) {
     var result = []
 
     // Create the request
-    request = new Request("SELECT ID, FIVEKMTIME  FROM RunnerPerformance;", function(error) {
+    request = new Request("SELECT ID, FIVEKMTIME  FROM RunnerPerformance WHERE FIVEKMTIME < 20;", function(error) {
         if (error) {context.log(error);}
         // pass the results array on through the callback
         callback(null, result);

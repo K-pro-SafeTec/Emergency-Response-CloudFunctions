@@ -34,8 +34,9 @@ function queryEmpData(connection, callback) {
 module.exports = function (context, req) {
 
 
-    if (req.query.emp_id || (req.body && req.body.emp_id)) {
-        
+    // if (req.query.emp_id || (req.body && req.body.emp_id)) {
+    if (true) {
+
         // Get connection details to connect to DB from env variable. Can do this since I've set a connection string for the database in the Function context
         context.log(process.env.SQLAZURECONNSTR_EmergencyResponseDB)
         var connection_details = JSON.parse(process.env.SQLAZURECONNSTR_EmergencyResponseDB)
@@ -80,8 +81,6 @@ module.exports = function (context, req) {
 
         });
 
-        // Calling context.done() terminates the cloud Function
-        context.done();
     }
     else {
         context.res = {
@@ -89,7 +88,9 @@ module.exports = function (context, req) {
             body: "Please pass an emp id"
         };
     }
+    // Calling context.done() terminates the cloud Function
 
+    context.done();
     
     
 };

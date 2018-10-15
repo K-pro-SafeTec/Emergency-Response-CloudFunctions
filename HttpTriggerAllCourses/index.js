@@ -9,7 +9,7 @@ function query_all_courses(connection, callback) {
     var result = []
 
     // Create the request and set it to call the callback with the result 
-    request = new Request("SELECT * FROM Courses;", function(error) {
+    request = new Request("SELECT * FROM Course;", function(error) {
 
         // Pass the results array through the callback
         callback(error, result);
@@ -21,7 +21,6 @@ function query_all_courses(connection, callback) {
 
         // // Decide what should be returned from the result
         result.push({
-            // course_id:              columns[0].value
             course_id:              columns.course_id.value,
             course_name:            columns.course_name.value,
             course_duration_hrs:    columns.course_duration_hrs.value,

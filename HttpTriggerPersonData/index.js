@@ -86,11 +86,11 @@ module.exports = function (context, req) {
         context.res = {
             status: 400,
             body: "Please pass an emp id"
+            context.done();
+
         };
     }
-    // Calling context.done() terminates the cloud Function
 
-    context.done();
     
     
 };

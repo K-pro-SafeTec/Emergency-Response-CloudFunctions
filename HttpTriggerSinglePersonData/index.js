@@ -43,12 +43,9 @@
         else if(req.query.emp_id){
             emp_id = req.query.emp_id
         }
-        
-        
+        emp_id = parseInt(emp_id, 10)
 
-        
         if (Number.isInteger(emp_id) && emp_id !== -1 && !isNaN(emp_id)){
-            emp_id = parseInt(emp_id, 10)
 
             // Get connection details to connect to DB from env variable. Can do this since I've set a connection string for the Azure function to the database
             var connection_details = JSON.parse(process.env.SQLAZURECONNSTR_EmergencyResponseDB)

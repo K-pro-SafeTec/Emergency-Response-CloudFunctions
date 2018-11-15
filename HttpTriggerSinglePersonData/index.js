@@ -36,19 +36,17 @@
 
 
     module.exports = function (context, req) {
+        emp_id = -1;
+        if(req.body && req.body.emp_id){
+            emp_id = req.body.emp_id
+        }
+        else if(req.query.emp_id){
+            emp_id = req.query.emp_id
+        }
 
+        
+        if (Number.isInteger(emp_id) && emp_id !== -1){
 
-        // if (req.query.emp_id || (req.body && req.body.emp_id)) {
-        // if (true) {
-        if (req.query.emp_id || (req.body && req.body.emp_id)) {
-
-            emp_id = -1;
-            if(req.body && req.body.emp_id){
-                emp_id = req.body.emp_id
-            }
-            else if(req.query.emp_id){
-                emp_id = req.query.emp_id
-            }
 
             // Get connection details to connect to DB from env variable. Can do this since I've set a connection string for the Azure function to the database
             var connection_details = JSON.parse(process.env.SQLAZURECONNSTR_EmergencyResponseDB)
